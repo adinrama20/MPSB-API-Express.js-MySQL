@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/app.js",
-      "destination": "/app.js"
+      "source": "/api/users",
+      "destination": "/routes/users.js"
     }
   ]
 }
