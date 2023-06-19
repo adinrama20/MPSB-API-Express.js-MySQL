@@ -23,8 +23,20 @@ router.get("/:id", async (req, res) => {
   res.status(200).json(user);
 });
 
-// POST METHOD
-router.post("/", async (req, res) => {
+// LOGIN USING POST METHOD
+/*router.post("/login", async (req, res) => {
+  const schema = {
+    username: "string",
+    password: "string",
+  };
+
+  schema = req.params;
+
+  // masih dalam proses pengerjaan
+});*/
+
+// REGISTER USING POST METHOD
+router.post("/register", async (req, res) => {
   const schema = {
     name: "string",
     username: "string",
