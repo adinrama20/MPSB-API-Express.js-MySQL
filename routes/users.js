@@ -24,16 +24,27 @@ router.get("/:id", async (req, res) => {
 });
 
 // LOGIN USING POST METHOD
-/*router.post("/login", async (req, res) => {
-  const schema = {
-    username: "string",
-    password: "string",
-  };
+router.post("/login", async (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
 
-  schema = req.params;
+  const user = await User.findOne({
+    where: {
+      username: username,
+      password: password,
+    },
+  });
 
-  // masih dalam proses pengerjaan
-});*/
+  if (!user) {
+    res.status(402).json({
+      success: false,
+    });
+  }
+
+  res.status(200).json({
+    success: true,
+  });
+});
 
 // REGISTER USING POST METHOD
 router.post("/register", async (req, res) => {
