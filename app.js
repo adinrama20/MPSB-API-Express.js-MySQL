@@ -59,7 +59,7 @@ const db = mysql.createConnection({
 });
 
 // LOGIN
-router.post("/register", (req, res) => {
+app.post("/register", (req, res) => {
   const sql =
     "INSERT INTO login (`name`, `username`, `email`, `password`) VALUES (?)";
   const values = [
