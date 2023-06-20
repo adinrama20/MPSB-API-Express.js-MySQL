@@ -1,9 +1,11 @@
 var express = require("express");
 var router = express.Router();
+const cors = require("cors");
 const { User } = require("../models");
 const Validator = require("fastest-validator");
 
 const v = new Validator();
+router.use(cors());
 
 // GET ALL METHOD
 router.get("/", async (req, res) => {
