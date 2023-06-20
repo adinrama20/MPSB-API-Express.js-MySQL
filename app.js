@@ -61,12 +61,13 @@ const db = mysql.createConnection({
 // LOGIN
 app.post("/register", (req, res) => {
   const sql =
-    "INSERT INTO login (`name`, `username`, `email`, `password`) VALUES (?)";
+    "INSERT INTO login (`name`, `username`, `email`, `password`, `status`) VALUES (?)";
   const values = [
     req.body.name,
     req.body.username,
     req.body.email,
     req.body.password,
+    req.body.status,
   ];
   db.query(sql, [values], (err, data) => {
     if (err) {
