@@ -4,8 +4,8 @@ https://mpsb-api-expressjs-mysql-production.up.railway.app/
 ### User
 - Mendapatkan semua data user `/api/users`
 - Mendapatkan data user berdasarkan id `/api/users/{id}`
-- Login `/api/users/login`
-- Register `/api/users/register`
+- Login `/api/login`
+- Register `/api/register`
 - Memodifikasi data user berdasarkan id `/api/users/{id}`
 - Menghapus user berdasarkan id `/api/users/{id}`
 
