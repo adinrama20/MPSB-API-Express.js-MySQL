@@ -25,7 +25,12 @@ const practicesPointsRouter = require("./routes/practice_points");
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: "httpa://mpsb-api-expressjs-mysql-production.up.railway.app",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
