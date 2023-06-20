@@ -1,13 +1,12 @@
 var express = require("express");
 var router = express.Router();
-const cors = require("cors");
 const { User } = require("../models");
 const Validator = require("fastest-validator");
 
 const v = new Validator();
 
 // GET ALL METHOD
-router.get("/", cors(), async (req, res) => {
+router.get("/", async (req, res) => {
   const users = await User.findAll();
   res.status(200).json(users);
 });
@@ -25,7 +24,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // LOGIN USING POST METHOD
-router.post("/login", cors(), async (req, res) => {
+router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   const user = await User.findOne({
@@ -47,7 +46,7 @@ router.post("/login", cors(), async (req, res) => {
 });
 
 // REGISTER USING POST METHOD
-router.post("/register", cors(), async (req, res) => {
+router.post("/register", async (req, res) => {
   const schema = {
     name: "string",
     username: "string",
