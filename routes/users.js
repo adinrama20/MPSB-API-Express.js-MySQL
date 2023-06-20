@@ -24,7 +24,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // LOGIN USING POST METHOD
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
   const { username, password } = req.body;
 
   const user = await User.findOne({
@@ -46,7 +46,7 @@ router.post("/login", async (req, res) => {
 });
 
 // REGISTER USING POST METHOD
-router.post("/register", async (req, res) => {
+router.post("/", async (req, res) => {
   const schema = {
     name: "string",
     username: "string",
