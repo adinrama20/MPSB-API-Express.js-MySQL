@@ -25,9 +25,18 @@ const practicesPointsRouter = require("./routes/practice_points");
 
 const app = express();
 
+const whitelist = [
+  "https://mpsb-api-expressjs-mysql-production.up.railway.app/",
+];
 const corsOptions = {
-  origin: "httpa://mpsb-api-expressjs-mysql-production.up.railway.app",
-  optionsSuccessStatus: 200,
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
