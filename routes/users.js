@@ -25,8 +25,7 @@ router.get("/:id", async (req, res) => {
 
 // LOGIN USING POST METHOD
 router.post("/login", async (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  const { username, password } = req.body;
 
   const user = await User.findOne({
     where: {
