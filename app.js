@@ -3,7 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var cors = require("cors");
+const cors = require("cors");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -24,13 +24,19 @@ const practicesPointsRouter = require("./routes/practice_points");
 
 const app = express();
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
   res.setHeader("Acces-Control-Allow-Origin", "*");
   res.setHeader("Acces-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
   res.setHeader("Acces-Control-Allow-Headers", "Content-Type, Authorization");
   next();
-});
-// app.use(cors());
+});*/
+const corsOption = {
+  origin: "*",
+  methods: "GET, POST, PUT, DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+};
+
+app.use(cors(corsOption));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
