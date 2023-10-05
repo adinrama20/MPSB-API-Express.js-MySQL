@@ -1,5 +1,5 @@
 # MPSB-API-Express.js-MySQL
-https://mpsb-api-expressjs-mysql-production.up.railway.app/ 
+https://mpsb-api-project-heroku-01e7fc16a360.herokuapp.com/ 
 
 ### User
 - Mendapatkan semua data user `/api/users`
